@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@600&display=swap');
+:root {
+    --artist: #C1FF05;
+    --white: #fff;
+    --background: #6F6F6F;
+    --dark: #000;
+    --gold: #bdae82;
+    --image: url(./img/beyonce.png);
+}
+body {
+    margin: 0;
+    font-family: 'Titillium Web', sans-serif;
+}
+p {
+    margin: 6px 0;
+}
+/* MAIN */
+.blury-image {
+    height: calc(100vh - 160px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.blury-image::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    position: relative;
+    display: block;
+    background-image: var(--image);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    width: 100%;
+    height: calc(100vh - 60px);
+}
+.audio-player-container {
+    position: fixed;
+    z-index: 0;
+    width: 350px;
+}
+.track-image {
+    position: relative;
+    width: 100%;
+    max-height: 260px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+}
+.controls {
+    position: relative;
+    top: -10px;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(97,186,255,1) 0%, rgba(166,239,253,1) 90.1% );
+    padding: 20px;
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+.row-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.play-pause {
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    filter: invert(10%) sepia(10%) saturate(560%) hue-rotate(130deg) brightness(117%) contrast(92%);
+}
+.play-pause:hover {
+    transform: scale(1.05);
+}
+.artist-song-wrapper {
+    width: 180px;
+    margin: 0 10px
+}
+.artist {
+    font-family: 'Titillium Web', sans-serif;
+    color: var(--artist);
+    font-size: 20px;
+    text-align: center;
+}
+.song {
+    display: block;
+    width: 100%;
+    font-family: 'Titillium Web', sans-serif;
+    color: var(--white);
+    font-size: 18px;
+    overflow: hidden;
+    white-space: nowrap; /* Запрещаем переносы слов */
+}
+.song span {
+    display: inline-block;
+    padding-left: 100%;
+    -webkit-animation: scroll 5s infinite linear;
+    -moz-animation: scroll 5s infinite linear;
+    animation: scroll 5s infinite linear;
+}
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -webkit-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+@-moz-keyframes scroll {
+    0% {
+        -moz-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+    100% {
+        -moz-transform: translate(-100%, 0);
+        transform: translate(-100%, 0)
+    }
+}
+@keyframes scroll {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0)
+    }
+}
+.prev-next-btn {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    filter: invert(10%) sepia(10%) saturate(560%) hue-rotate(130deg) brightness(117%) contrast(92%);
+}
+.prev-next-btn:hover {
+    transform: scale(1.15);
+}
+.indicator {
+    width: 100%;
+}
+.full-time {
+    margin-bottom: 2px;
+    color: #212528;
+    font-size: 14px;
+    text-align: right;
+}
+.track-progress {
+    cursor: pointer;
+    width: 100%;
+}
+.time-now {
+    margin: 2px 0;
+    color: #212528;
+    font-size: 14px;
+    text-align: left;
+}
+.additional-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.repeat {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+.repeat.active {
+    filter: brightness(0) saturate(100%) invert(93%) sepia(26%) saturate(4000%) hue-rotate(19deg) brightness(109%) contrast(101%);
+}
+.volume-wrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.download-link {
+    display: flex;
+    align-items: center;
+}
+.volume-img, .download {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+}
+.volume {
+    cursor: pointer;
+}
+.alert {
+    position: absolute;
+    bottom: 65px;
+    left: 20px;
+    padding: 10px;
+    background-color: #f44336; /* Red */
+    color: white;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity .6s ease-out;
+}
+.download:hover, .volume-img:hover, .repeat:hover {
+    transform: scale(1.15);
+}
+/* END OF MAIN */
+.container {
+    max-width: 1920px;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--dark);
+    padding: 0 40px;
+}
+/* footer */
+.rss {
+    height: 50px;
+    /* filter: brightness(0) saturate(100%) invert(90%) sepia(52%) saturate(2%) hue-rotate(138deg) brightness(111%) contrast(101%); */
+}
+.left span {
+    color: var(--white);
+    font-size: 18px;
+}
+.left span:nth-child(2) {
+    margin: 0 20px;
+}
+.github {
+    text-decoration: none;
+    color: var(--white);
+}
+.github:hover {
+    color: var(--gold);
+}
+.rss:hover {
+    filter: invert(6%) sepia(15%) saturate(669%) hue-rotate(7deg) brightness(100%) contrast(85%);
+}
+/* RADIO */
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.prev-next-radio {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+.prev-next-radio:hover {
+    transform: scale(1.05);
+}
+.prev-radio {
+    display: none;
+    position: absolute;
+    top: 35px;
+    left: 10px;
+    transform: rotate(180deg) !important;
+}
+.next-radio {
+    position: absolute;
+    top: 35px;
+    right: 10px;
+}
+.station-list {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.stations-title {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 12px;
+    background: var(--artist);
+    color: var(--dark);
+    padding: 0 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.station-btn {
+    max-width: 145px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+    position: relative;
+    z-index: 1;
+}
+.station-img {
+    margin-top: 12px;
+    margin: 0 10px;
+    width: 40px;
+    height: 40px;
+}
+.station-name {
+    max-width: 140px;
+    display: block;
+    white-space: nowrap;
+    padding: 2px 0 0;
+    margin: 0 20px;
+    font-size: 12px;
+    color: var(--white);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.switch-to-playlist {
+    display: none;
+    cursor: pointer;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: 12px;
+    background: var(--artist);
+    color: var(--dark);
+    padding: 0 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+@media (max-width: 1300px) {
+    .station-name {
+        display: none;
+    }
+}

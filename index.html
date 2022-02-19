@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css"/>
+    <link rel="icon" href="./assets/png/music.png"/>
+    <title>Audio Player</title>
+</head>
+<body>
+    <header class="container header">
+        <div class="stations-title">Radio Stations</div>
+        <div class="station-list">
+            <img class="prev-next-radio prev-radio" src="./assets/svg/prevNext.svg" alt="previous-button" />
+            <img class="prev-next-radio next-radio" src="./assets/svg/prevNext.svg" alt="previous-button" />
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="station-btn">
+                <img class="station-img" src="./assets/svg/radio.svg" alt="radio-station-logo"/>
+                <p class="station-name">Radio</p>
+            </div>
+            <div class="switch-to-playlist">Switch to Playlist</div>
+        </div>
+    </header>
+    <main class="blury-image">
+        <div class="audio-player-container">
+            <img class="track-image" src="./assets/img/beyonce.png" alt="track-image"/>
+            <div class="controls">
+                <div class="row-wrapper">
+                    <img src="./assets/png/play.png" alt="play-pause button" class="play-pause">
+                    <div class="artist-song-wrapper">
+                        <p class="artist">Beyonce</p>
+                        <p class="song"><span class="song-title">Don't Hurt Yourself</span></p>
+                    </div>
+                    <div class="prev-next-controls">
+                        <img class="prev-next-btn prev" src="./assets/png/backward.png" alt="backward button"/>
+                        <img class="prev-next-btn next" src="./assets/png/forward.png" alt="forward button"/>
+                    </div>
+                </div>
+                <div class="indicator">
+                    <p class="full-time">3:53</p>
+                    <input class="track-progress" type="range" min="0" step="1" value="0">
+                    <p class="time-now">0:00</p>
+                </div>
+                <div class="additional-controls">
+                    <img class="repeat" src="./assets/svg/repeat.svg" alt="repeat-track" />
+                    <a href="" class="download-link" target="_blank" download >
+                        <img class="download" src="./assets/svg/download.svg" alt="download-track" />
+                    </a>
+                    <div class="volume-wrapper">
+                        <img class="volume-img" src="./assets/svg/sound.svg" alt="volume"/>
+                        <input class="volume" type="range" min="0" max="100" step="1" value="100"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="alert">
+            Error! Can't play. Switch next
+        </div>
+    </main>
+    <footer class="container">
+        <div class="left">
+            <span>©</span>
+            <span>2022</span>
+            <span><a class="github" href="https://github.com/dokahp" target="_blank">github</a></span>
+        </div>
+        <a href="https://rs.school/js-stage0/" target="_blank"><img class="rss" src="./assets/svg/rss.svg" alt="rolling scope school"/></a>
+    </footer>
+    <script src="./assets/index.js"></script>
+</body>
+</html>
